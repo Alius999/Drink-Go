@@ -1,0 +1,88 @@
+.main-header {
+    position: relative;
+    background-color: @white;
+    width: 320px;
+    min-height: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (min-width: @tablet-width) {
+        width: 768px;
+        min-height: 80px;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 1440px;
+    }
+}
+
+.main-header__logo-img {
+    display: block;
+}
+
+.main-header__slogan {
+    display: none;
+    grid-column: 2/3;
+
+    @media (min-width: @desktop-width) {
+        display: block;
+        font-family: "Montserrat", "Arial", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0;
+        text-align: left;
+        color: @text-color;
+    }
+}
+
+.main-header__container {
+    display: grid;
+    grid-template-columns: 1fr 0px 4fr 1fr;
+    padding: 0 6px 0 20px;
+    align-items: center;
+
+    @media (min-width: @tablet-width) {
+        box-sizing: border-box;
+        grid-template-columns: 1fr 0px 4fr 140px;
+        padding: 0 20px;
+    }
+
+    @media (min-width: @desktop-width) {
+        grid-template-columns: 190px 1.6fr 4fr 280px;
+        padding: 0 40px;
+    }
+}
+
+.main-header__burger-button {
+    @media (max-width: @tablet-width) {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        background: @white;
+        border: none;
+        padding: 11px 0;
+        grid-column: 4/5;
+
+        &:hover,
+        &:focus {
+            background: @accent-hover;
+        }
+    
+        &:active {
+            background: @accent-hover;
+        }
+    }
+
+    display: none;
+}
+
+.main-header__menu-icon {
+    @media (min-width: @tablet-width) {
+        display: none;
+    }
+}
+
+.main-header__close-icon {
+    display: none;
+}

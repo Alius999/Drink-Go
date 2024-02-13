@@ -1,0 +1,31 @@
+.map__container {
+    margin: 0 auto;
+    width: 320px;
+    height: 420px;
+    background: url(../images/map.jpg);
+
+    @media (min-width: @tablet-width) {
+        position: relative;
+        width: 768px;
+        height: 480px;
+        background: url(../images/map-tablet.jpg);
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 1440px;
+        height: 540px;
+        background: url(../images/map-desktop.jpg);
+    }
+}
+
+.map__container-marker {
+    display: none;
+
+    @media (min-width: @tablet-width) {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-10%, -50%);
+    }
+}

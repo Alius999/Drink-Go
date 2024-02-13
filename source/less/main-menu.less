@@ -1,0 +1,107 @@
+.main-menu__list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+
+    @media (max-width: @tablet-width) {
+        border-bottom: 1px solid @accent-hover;
+    }
+
+    @media (min-width: @tablet-width) {
+        position: static;
+        display: flex;
+        margin-left: 34px;
+    }
+}
+
+.main-menu {
+    @media (max-width: @tablet-width) {
+        grid-row: 2/3;
+        grid-column: 1/5;
+    }
+}
+
+.main-menu--nojs .main-menu__list{
+    @media (max-width: @tablet-width) {
+        display: block;
+        position: relative;
+    }
+}
+
+.main-menu__item {
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu__item:not(last-child) {
+
+    @media (min-width: @desktop-width) {
+        margin-right: 20px;
+    }
+}
+
+.main-menu__link {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-family: @base-font;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: @text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    box-sizing: border-box;
+    word-wrap: normal;
+    min-height: 60px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background: @white;
+    min-width: 85px;
+    max-width: 120px;
+    word-wrap: break-word;
+
+    &:hover,
+    &:focus {
+        color: @accent-color;
+    }
+
+    &:active {
+        background: @accent-hover;
+        color: @white;
+    }
+
+    @media (max-width: @tablet-width) {
+        border-top: 1px solid @accent-hover;
+    }
+
+    @media (min-width: @tablet-width) {
+        padding: 32px 20px;
+        position: relative;
+    }
+}
+
+.main-menu__link--active {
+    color: @accent-color;
+}
+
+.main-menu__link--active::before {
+    @media (min-width: @tablet-width) {
+        content: "";
+        display: block;
+        width: 100%;
+        left: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        background: @accent-color;
+    }
+}
+

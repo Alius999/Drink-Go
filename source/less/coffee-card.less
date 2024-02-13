@@ -1,0 +1,145 @@
+.coffee-card {
+    width: 280px;
+    min-height: 420px;
+    background: @white;
+    margin: 0 auto;
+    border-radius: 4px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    color: @text-color;
+
+    @media (min-width: @tablet-width) {
+        margin: 0;
+        width: 349px;
+        min-height: 440px;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 311px;
+        min-height: 460px;
+    }
+}
+
+.coffee-card:not(last-child) {
+    margin-bottom: 20px;
+
+    @media (min-width: @tablet-width) {
+        margin-bottom: 0;
+    }
+}
+
+.coffee-card__image {
+    display: block;
+    margin: 0 auto 24px;
+    padding-top: 40px;
+
+    @media (min-width: @tablet-width) {
+        padding-top: 50px;
+    }
+}
+
+.coffee-card__header {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: left;
+    display: block;
+    width: 240px;
+    margin: 0 auto;
+
+    @media (min-width: @tablet-width) {
+        width: 289px;
+        font-size: 24px;
+        line-height: 36px;
+        margin: 30px auto 0;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 257px;
+        margin: 33px auto 0;
+    }
+}
+
+.coffee-card__describtion {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    display: block;
+    width: 240px;
+    margin: 3px auto 0;
+
+    @media (min-width: @tablet-width) {
+        margin: 10px auto 0;
+        width: 289px;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 257px;
+    }
+}
+
+.coffee-card__price-order-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px auto 0;
+    width: 240px;
+
+    @media (min-width: @tablet-width) {
+        margin: 20px auto 0;
+        width: 289px;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 257px;
+    }
+}
+
+.coffee-card__price {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.coffee-card__add-to-cart {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    width: 141px;
+    min-height: 36px;
+    border-radius: 4px;
+    background: @accent-color;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    color: @white;
+    align-items: center;
+    justify-self: end;
+    padding: 0 10px 0 20px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: @hover-button;
+    }
+
+    &:active {
+        background: @active-button;
+    }
+}
+
+.coffee-card__add-to-cart::before {
+    content: "";
+    background: url(../images/order-cart-icon.svg) no-repeat;
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 16px;
+}

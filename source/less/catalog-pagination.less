@@ -1,0 +1,132 @@
+.catalog-pagination {
+    display: flex;
+    width: 280px;
+    margin: 40px auto 0;
+    justify-content: space-between;
+    font-family: "Montserrat", "Arial", sans-serif;
+
+    @media (min-width: @tablet-width) {
+        width: 440px;
+        margin: 70px 0 0 auto;
+    }
+
+    @media (min-width: @desktop-width) {
+        grid-column: 2/3;
+        margin: 60px -20px 120px auto;
+    }
+}
+
+.catalog-pagination__list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: @tablet-width) {
+        width: 165px;
+    }
+}
+
+.catalog-pagination__button,
+.catalog-pagination__link {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 40px;
+    min-height: 40px;
+    border-radius: 4px;
+    background: @white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: @accent-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: @hover-button;
+        color: @white;
+    }
+
+    &:active {
+        background: @active-button;
+        color: @white;
+    }
+}
+
+.catalog-pagination__button {
+    @media (min-width: @tablet-width) {
+        width: 150px;
+    }
+}
+
+.catalog-pagination__item:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.catalog-pagination__link--active {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: @text-color;
+}
+
+.catalog-pagination__arrow {
+    @media (min-width: @tablet-width) {
+        display: none;
+    }
+}
+
+.catalog-pagination__arrow {
+    @media (min-width: @tablet-width) {
+        display: none;
+    }
+}
+
+.catalog-pagination__arrow--next {
+    transform: rotate(180deg);
+}
+
+.catalog-pagination__button--left-arrow::before {
+    @media (min-width: @tablet-width) {
+        content: "Назад";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0;
+        text-align: center;
+        color: @accent-color;
+    }
+}
+
+.catalog-pagination__button--left-arrow:hover::before,
+.catalog-pagination__button--left-arrow:focus::before,
+.catalog-pagination__button--left-arrow:active::before {
+    @media (min-width: @tablet-width) {
+        color: @white;
+    }
+}
+
+.catalog-pagination__button--right-arrow::before {
+    @media (min-width: @tablet-width) {
+        content: "Вперёд";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0;
+        text-align: center;
+        color: @accent-color;
+    }
+}
+
+.catalog-pagination__button--right-arrow:hover::before,
+.catalog-pagination__button--right-arrow:focus::before,
+.catalog-pagination__button--right-arrow:active::before {
+    @media (min-width: @tablet-width) {
+        color: @white;
+    }
+}

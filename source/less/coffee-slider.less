@@ -1,0 +1,300 @@
+.coffee-slider__wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 320px;
+
+    @media (min-width: @tablet-width) {
+        width: 768px;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 1440px;
+    }
+}
+
+.coffee-slider__wrapper-inside {
+    margin: 0 auto;
+    position: relative;
+    transition: 1s;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.coffee-slider__container {
+    min-width: 320px;
+    width: 320px;
+    min-height: 656px;
+    margin: 0 auto;
+    background: @slider-bg;
+    position: relative;
+
+    @media (min-width: @tablet-width) {
+        display: grid;
+        min-width: 768px;
+        width: 768px;
+        background: linear-gradient(
+            to bottom,
+            @slider-bg 0%,
+            @slider-bg 77%,
+            @white 77%,
+            @white 100%
+        );
+    }
+
+    @media (min-width: @desktop-width) {
+        grid-template-columns: 3fr 4fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas:
+            "coffee-slider__image-container slider-description"
+            "coffee-slider__image-container coffee-slider__order"
+            "coffee-slider__image-container coffee-slider__order";
+        column-gap: 30px;
+        background: @slider-bg;
+        min-width: 1440px;
+        width: 1440px;
+        min-height: 714px;
+        position: relative;
+    }
+}
+
+.coffee-slider__container--second {
+    background: @lavender;
+
+    @media (min-width: @tablet-width) {
+        background: linear-gradient(
+            to bottom,
+            @lavender 0%,
+            @lavender 78%,
+            @white 78%,
+            @white 100%
+        );
+    }
+
+    @media (min-width: @desktop-width) {
+        background: @lavender;
+    }
+}
+
+.coffee-slider__container--third {
+    background: @espresso;
+
+    @media (min-width: @tablet-width) {
+        background: linear-gradient(
+            to bottom,
+            @espresso 0%,
+            @espresso 78%,
+            @white 78%,
+            @white 100%
+        );
+    }
+
+    @media (min-width: @desktop-width) {
+        background: @espresso;
+    }
+}
+
+.coffee-slider__button-arrow {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    outline: none;
+    border: none;
+    background: transparent;
+    z-index: 10;
+
+    @media (min-width: @tablet-width) {
+        width: 80px;
+        height: 78%;
+    }
+
+    @media (min-width: @desktop-width) {
+        width: 80px;
+        height: 100%;
+    }
+}
+
+.coffee-slider__button-arrow--left {
+    left: 0;
+
+    @media (min-width: @tablet-width) {
+
+        &:hover,
+        &:focus {
+            background: linear-gradient(
+                90deg,
+                @white 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+
+        }
+
+        &:active {
+            background: linear-gradient(
+                90deg,
+                rgba(120, 89, 207, 0.25) 0%,
+                rgba(120, 89, 207, 0) 100%
+            );
+        }
+    }
+}
+
+.coffee-slider__button-arrow--right {
+    right: 0;
+
+    @media (min-width: @tablet-width) {
+
+        &:hover,
+        &:focus {
+            background: linear-gradient(
+                -90deg,
+                @white 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+
+        }
+
+        &:active {
+            background: linear-gradient(
+                -90deg,
+                rgba(120, 89, 207, 0.25) 0%,
+                rgba(120, 89, 207, 0) 100%
+            );
+        }
+    }
+}
+
+.coffee-slider__image-arrow--right {
+    transform: rotate(180deg);
+}
+
+.coffee-slider__image-container {
+    padding-top: 20px;
+
+    @media (min-width: @desktop-width) {
+        padding: 30px 0 0 105px;
+        grid-column: 1/2;
+        grid-row: 1/4;
+    }
+}
+
+.coffee-slider__image {
+    display: block;
+    margin: 0 auto;
+}
+
+.coffee-slider__order {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    width: 230px;
+    margin: 20px auto 0;
+    align-items: baseline;
+
+    @media (min-width: @tablet-width) {
+        grid-row: 2/3;
+    }
+
+    @media (min-width: @desktop-width) {
+        margin: 12px 0 0;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+}
+
+.coffee-slider__order-strike-price {
+    margin: 0;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    text-decoration-line: line-through;
+    color: @accent-color;
+    padding: 0;
+}
+
+.coffee-slider__order-actual-price {
+    margin: 0;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: @text-color;
+    padding: 0;
+}
+
+.coffee-slider__order-button {
+    display: block;
+    margin: 0;
+    width: 113px;
+    min-height: 40px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: @white;
+    background: @accent-color;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding: 0;
+    box-sizing: border-box;
+    justify-self: end;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: @hover-button;
+    }
+
+    &:active {
+        background: @active-button;
+    }
+}
+
+.coffee-slider__navigation {
+    display: none;
+
+    @media (min-width: @desktop-width) {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 206px;
+        z-index: 10;
+        bottom: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.coffee-slider__navigation-indicator {
+    @media (min-width: @desktop-width) {
+        display: block;
+        width: 66px;
+        height: 4px;
+        background: @white;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background: @hover-button;
+        }
+    
+        &:active {
+            background: @accent-hover;
+        }
+    }
+}
+
+.coffee-slider__navigation-indicator--active {
+    @media (min-width: @desktop-width) {
+        background: @accent-color;
+    }
+}
